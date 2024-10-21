@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Jobs Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4CAF50 40%, #087f23);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #087f23;
+        }
+
+        footer {
+            background-color: #087f23;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto; /* Ensures footer stays at the bottom */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            padding-bottom: 50px; /* Adds space above footer */
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+        }
+
+        .login-box h2 {
+            color: #087f23;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .jobs-list {
+            display: none;
+            margin-top: 40px;
+        }
+
+        .jobs-list h2 {
+            color: #087f23;
+            margin-bottom: 20px;
+        }
+
+        .job {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 15px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 70%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .apply-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .apply-link:hover {
+            text-decoration: underline;
+        }
+
+        .admin-form {
+            display: none;
+            margin-top: 40px;
+        }
+
+        .admin-form h2 {
+            color: #087f23;
+        }
+
+        .admin-form input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Renewable Energy Jobs Platform</h1>
+    </header>
+
+    <div class="container">
+        <div class="login-box" id="role-selection">
+            <h2>Select Role</h2>
+            <button onclick="showLogin('user')">User Login</button>
+            <button onclick="showLogin('admin')">Admin Login</button>
+        </div>
+
+        <!-- User/Admin Login Form -->
+        <div class="login-box" id="login-form" style="display:none;">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- User Job List -->
+        <div id="user-jobs" class="jobs-list">
+            <h2>Available Renewable Energy Jobs</h2>
+            <div class="job">
+                <strong>Solar Engineer - San Francisco, CA</strong>
+                <a href="#" class="apply-link">Apply Now</a>
+            </div>
+            <div class="job">
+                <strong>Wind Turbine Technician - Austin, TX</strong>
+                <a href="#" class="apply-link">Apply Now</a>
+            </div>
+            <div class="job">
+                <strong>Energy Analyst - Denver, CO</strong>
+                <a href="#" class="apply-link">Apply Now</a>
+            </div>
+            <div class="job">
+                <strong>Solar Panel Installer - Phoenix, AZ</strong>
+                <a href="#" class="apply-link">Apply Now</a>
+            </div>
+            <div class="job">
+                <strong>Renewable Energy Consultant - New York, NY</strong>
+                <a href="#" class="apply-link">Apply Now</a>
+            </div>
+        </div>
+
+        <!-- Admin Job Editing Form -->
+        <div id="admin-form" class="admin-form">
+            <h2>Edit Jobs</h2>
+            <div class="input-group">
+                <input type="text" id="job-title" placeholder="Job Title">
+                <input type="text" id="job-location" placeholder="Location">
+                <input type="text" id="apply-link" placeholder="Apply Link">
+            </div>
+            <button onclick="editJobs()">Save Job</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Renewable Energy Jobs Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showLogin(role) {
+            document.getElementById('role-selection').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('login-form').dataset.role = role;
+        }
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('login-form').dataset.role;
+
+            if (username === "admin" && password === "admin") {
+                if (role === "admin") {
+                    document.getElementById('login-form').style.display = 'none';
+                    document.getElementById('admin-form').style.display = 'block';
+                } else if (role === "user") {
+                    document.getElementById('login-form').style.display = 'none';
+                    document.getElementById('user-jobs').style.display = 'block';
+                }
+            } else {
+                alert('Invalid credentials! Use "admin" for both username and password.');
+            }
+        }
+
+        function editJobs() {
+            const jobTitle = document.getElementById('job-title').value;
+            const jobLocation = document.getElementById('job-location').value;
+            const applyLink = document.getElementById('apply-link').value;
+
+            if (jobTitle && jobLocation && applyLink) {
+                alert('Job updated: ' + jobTitle + ' - ' + jobLocation);
+            } else {
+                alert('Please fill out all fields.');
+            }
+        }
+    </script>
+</body>
+
+</html>

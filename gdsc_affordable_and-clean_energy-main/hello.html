@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy-Sharing Community Platform | SDG Goal 7</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4CAF50 40%, #087f23);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #087f23;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #4CAF50;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px;
+        }
+
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .content h2 {
+            color: #087f23;
+        }
+
+        .content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            list-style-type: square;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #087f23;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function showContent(contentId) {
+            // Hide all content sections
+            const contents = document.querySelectorAll('.content-section');
+            contents.forEach(section => section.style.display = 'none');
+
+            // Show the selected content
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Energy-Sharing Community Platform | SDG Goal 7</h1>
+        <p>Empowering Communities to Share Renewable Energy Resources</p>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showContent('platform-overview')">Platform Overview</a>
+        <a href="#" onclick="showContent('how-it-works')">How It Works</a>
+        <a href="#" onclick="showContent('benefits')">Benefits</a>
+        <a href="#" onclick="showContent('official-links')">Official Links</a>
+    </nav>
+
+    <div class="container">
+        <!-- Platform Overview Section -->
+        <div class="content content-section" id="platform-overview" style="display: block;">
+            <h2>Energy-Sharing Community Platform</h2>
+            <p>The Energy-Sharing Community Platform is a decentralized system that allows households within a community to share excess renewable energy, such as solar power, with others. This platform promotes the efficient use of clean energy, helps reduce electricity costs, and minimizes reliance on non-renewable energy sources.</p>
+            <p>The platform aligns with <strong>SDG Goal 7 (Affordable and Clean Energy)</strong>, which aims to ensure access to affordable, reliable, sustainable, and modern energy for all. It provides an innovative way for communities to manage their energy consumption and distribution in a collaborative and sustainable manner.</p>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="content content-section" id="how-it-works" style="display: none;">
+            <h2>How It Works</h2>
+            <ul>
+                <li><strong>Solar Panel Installation:</strong> Households generate solar energy through rooftop solar panels or other renewable sources.</li>
+                <li><strong>Energy Monitoring:</strong> Each household’s energy consumption and excess energy production are tracked in real-time using smart meters.</li>
+                <li><strong>Energy Sharing:</strong> Excess energy produced by one household is shared with others in the community through the platform, reducing the need for non-renewable energy.</li>
+                <li><strong>Peer-to-Peer Trading:</strong> Households can sell or donate excess energy to their neighbors using the platform, creating a decentralized energy-sharing economy.</li>
+                <li><strong>Grid Integration:</strong> The platform integrates with local grids to ensure that surplus energy can be stored or used by the wider community.</li>
+            </ul>
+            <p>With the platform, households become energy producers and consumers ("prosumers"), contributing to a community-focused clean energy economy.</p>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="content content-section" id="benefits" style="display: none;">
+            <h2>Benefits of the Energy-Sharing Platform</h2>
+            <ul>
+                <li><strong>Cost Savings:</strong> Households can lower their electricity bills by sharing excess renewable energy within the community.</li>
+                <li><strong>Reduced Carbon Footprint:</strong> By sharing clean energy, the community minimizes its reliance on fossil fuels, helping to reduce greenhouse gas emissions.</li>
+                <li><strong>Energy Independence:</strong> Communities can become less dependent on centralized power grids by using locally produced renewable energy.</li>
+                <li><strong>Resiliency:</strong> In times of power outages or energy shortages, the platform allows communities to support each other by sharing energy.</li>
+                <li><strong>Job Creation:</strong> The development and management of renewable energy platforms create jobs in clean energy sectors, contributing to local economies.</li>
+            </ul>
+        </div>
+
+        <!-- Official Links Section -->
+        <div class="content content-section" id="official-links" style="display: none;">
+            <h2>Official Resources and Government Links</h2>
+            <p>Learn more about renewable energy sharing, government policies, and programs that support the transition to sustainable energy:</p>
+            <ul>
+                <li><a href="https://www.iea.org/topics/renewables" target="_blank">International Energy Agency - Renewable Energy</a></li>
+                <li><a href="https://www.energy.gov/eere/solarpoweringamerica" target="_blank">U.S. Department of Energy - Solar Powering America</a></li>
+                <li><a href="https://www.gov.uk/government/publications/community-energy" target="_blank">UK Government - Community Energy Resources</a></li>
+                <li><a href="https://www.un.org/sustainabledevelopment/energy/" target="_blank">United Nations - Affordable and Clean Energy (SDG 7)</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Energy-Sharing Community Platform | SDG Goal 7. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

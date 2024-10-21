@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Energy Education | SDG</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4CAF50 40%, #087f23);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #087f23;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #4CAF50;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px;
+        }
+
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .content h2 {
+            color: #087f23;
+        }
+
+        .content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            list-style-type: square;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #087f23;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function showContent(contentId) {
+            // Hide all content sections
+            const contents = document.querySelectorAll('.content-section');
+            contents.forEach(section => section.style.display = 'none');
+
+            // Show the selected content
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Clean Energy Education | SDG</h1>
+        <p>Learn about Clean Energy, Benefits, and Government Subsidies</p>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showContent('clean-energy-education')">Clean Energy Education</a>
+        <a href="#" onclick="showContent('clean-energy-benefits')">Clean Energy Benefits</a>
+        <a href="#" onclick="showContent('gov-subsidies')">Government Subsidies</a>
+    </nav>
+
+    <div class="container">
+        <!-- Clean Energy Education Section -->
+        <div class="content content-section" id="clean-energy-education" style="display: block;">
+            <h2>What is Clean Energy?</h2>
+            <p>Clean energy refers to energy derived from renewable sources that do not pollute the environment or emit harmful carbon dioxide. The main sources of clean energy include:</p>
+            <ul>
+                <li><strong>Solar Energy:</strong> Harnessing energy from the sun using solar panels.</li>
+                <li><strong>Wind Energy:</strong> Capturing wind power to generate electricity through turbines.</li>
+                <li><strong>Hydropower:</strong> Using water flow to generate energy.</li>
+                <li><strong>Geothermal Energy:</strong> Utilizing heat from within the Earth for power generation.</li>
+                <li><strong>Biomass Energy:</strong> Converting organic material like wood and waste into energy.</li>
+            </ul>
+            <p>These energy sources are sustainable, have minimal environmental impact, and play a critical role in combating climate change and reducing reliance on fossil fuels.</p>
+        </div>
+
+        <!-- Clean Energy Benefits Section -->
+        <div class="content content-section" id="clean-energy-benefits" style="display: none;">
+            <h2>Benefits of Clean Energy</h2>
+            <p>Switching to clean energy sources provides several key benefits:</p>
+            <ul>
+                <li><strong>Environmental Protection:</strong> Clean energy reduces air and water pollution, contributing to a healthier planet.</li>
+                <li><strong>Climate Change Mitigation:</strong> Reduces greenhouse gas emissions that contribute to global warming.</li>
+                <li><strong>Energy Security:</strong> Clean energy reduces dependence on imported fossil fuels and diversifies energy sources.</li>
+                <li><strong>Job Creation:</strong> The clean energy sector creates new jobs in engineering, manufacturing, and installation.</li>
+                <li><strong>Cost Savings:</strong> Solar and wind power have become some of the most cost-effective energy sources, reducing long-term energy costs for consumers and businesses.</li>
+            </ul>
+            <p>By transitioning to clean energy, we can build a sustainable future with a thriving economy, cleaner air, and healthier ecosystems.</p>
+        </div>
+
+        <!-- Government Subsidies Section -->
+        <div class="content content-section" id="gov-subsidies" style="display: none;">
+            <h2>Government Subsidies for Renewable Energy</h2>
+            <p>Governments worldwide offer various subsidies, grants, and tax incentives to encourage the adoption of renewable energy. These incentives make it easier and more affordable for individuals and businesses to install clean energy systems. Some common subsidies include:</p>
+            <ul>
+                <li><strong>Investment Tax Credits (ITC):</strong> Offers a percentage of the installation cost back in tax credits.</li>
+                <li><strong>Net Metering Programs:</strong> Allow solar panel owners to sell excess electricity back to the grid.</li>
+                <li><strong>State and Local Rebates:</strong> Local governments often provide additional financial assistance for renewable energy systems.</li>
+                <li><strong>Low-Interest Loans:</strong> Some governments offer financing options for clean energy installations.</li>
+            </ul>
+            <p>To learn more about government subsidies in your area, visit these official resources:</p>
+            <ul>
+                <li><a href="https://www.energy.gov/savings" target="_blank">U.S. Department of Energy – Energy Incentive Programs</a></li>
+                <li><a href="https://www.iea.org/policies" target="_blank">International Energy Agency – Global Energy Policies and Subsidies</a></li>
+                <li><a href="https://www.seai.ie/grants" target="_blank">Sustainable Energy Authority of Ireland – Energy Grants</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Clean Energy Education | SDG. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
